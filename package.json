@@ -1,0 +1,33 @@
+{
+  "name": "copydog",
+  "version": "0.0.1",
+  "main": "index.js",
+  "bin": "./index.js",
+  "license": "MIT",
+  "author": "André Restivo",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arestivo/copydog.git"
+  },  "dependencies": {
+    "@types/yargs": "^17.0.24",
+    "fs-extra": "^11.1.1",
+    "glob": "^10.2.6",
+    "node": "^20.2.0",
+    "ssdeep.js": "^0.0.3",
+    "yargs": "^17.7.2"
+  },
+  "scripts": {
+    "start": "ts-node index.ts"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.1",
+    "@types/node": "^20.2.4",
+    "@types/ssdeep.js": "^0.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  },
+  "keywords": [
+    "cli",
+    "plagiarism"
+  ]
+}
