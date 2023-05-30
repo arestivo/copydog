@@ -1,6 +1,6 @@
 # CopyDog
 
-<img src="https://raw.githubusercontent.com/arestivo/copydog/master/copydog.svg?token=GHSAT0AAAAAAB26JKSHJBUUKFPWW3FEE33EZDV3JMQ" width="100" height="100" align="left">
+<img src="assets/copydog.svg" width="100" height="100" align="left">
 
 A command-line interface (CLI) tool crafted to empower users in identifying projects with similar code bases. Operating on the premise that each project resides in its own dedicated folder, this tool leverages the capabilities of *ssdeep* to conduct comprehensive file-by-file comparisons.
 

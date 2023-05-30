@@ -1,8 +1,7 @@
 {
   "name": "copydog",
   "version": "0.0.1",
-  "main": "index.js",
-  "bin": "./index.js",
+  "bin": "./bin/index.js",
   "license": "MIT",
   "author": "André Restivo",
   "repository": {
@@ -17,7 +16,7 @@
     "yargs": "^17.7.2"
   },
   "scripts": {
-    "start": "ts-node index.ts"
+    "start": "ts-node src/index.ts"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.1",
