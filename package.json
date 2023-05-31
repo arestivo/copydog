@@ -1,6 +1,6 @@
 {
   "name": "copydog",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "bin": "./bin/index.js",
   "license": "MIT",
   "author": "André Restivo",
