@@ -1,13 +1,12 @@
 {
   "name": "copydog",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "bin": "./bin/index.js",
   "license": "MIT",
   "author": "André Restivo",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/arestivo/copydog.git"
-  },  "dependencies": {
+  "repository": "https://github.com/arestivo/copydog.git",
+  "icon": "assets/copydog.svg",
+  "dependencies": {
     "@types/yargs": "^17.0.24",
     "fs-extra": "^11.1.1",
     "glob": "^10.2.6",
