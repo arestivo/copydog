@@ -1,14 +1,15 @@
 import yargs from 'yargs'
 
 export class Command {
-  arguments: { f: string, e: string, t: number, p: number }
+  arguments: { f: string, e: string, t: number, p: number, w: boolean }
 
   constructor() { 
     this.arguments = yargs(process.argv.slice(2)).options({
       f: { type: 'string', alias: 'folders', description: 'list of folders to compare (prefix)', default: '' },
       e: { type: 'string', alias: 'extensions', description: 'list of extensions to consider', default: 'php,css,html,js' },
-      t: { type: 'number', alias: 'threshold', description: 'threshold for a file to be considered the same', min: 0, max: 100, default: 50 },
+      t: { type: 'number', alias: 'threshold', description: 'threshold for a file to be considered the same', min: 0, max: 100, default: 75 },
       p: { type: 'number', alias: 'print', description: 'percentage of matched files to be printed', default: 30 },
+      w: { type: 'boolean', alias: 'whitespace', description: 'remove whitespace before calculating hash', default: true }
     }).strict().parseSync()    
   }
 
@@ -30,5 +31,9 @@ export class Command {
 
   public print() {
     return this.arguments.p
+  }
+
+  public whitespace() {
+    return this.arguments.w
   }
 }
