@@ -8,19 +8,15 @@ export type comparison = {p1: string, p2: string, s: number}
 export class Matcher {
   cache: HashCache
   filesystem: Files
-  command: Command
-  output: Output
 
-  constructor() { 
+  constructor(private command: Command, private output: Output) { 
     this.cache = new HashCache 
     this.filesystem = new Files
-    this.command = new Command
-    this.output = new Output
   }
   
   private process(file: string) {
     if (!this.cache.has(file)) {
-      const contents = this.filesystem.readFile(file)
+      const contents = this.filesystem.readFile(file, this.command.whitespace())
       this.cache.add(file, contents)
     }
   }
@@ -56,7 +52,6 @@ export class Matcher {
     const comparisons: comparison[] = []
     const projects = this.filesystem.projects(this.command.folderPattern())
 
-    this.output.header(this.command.extensions(), this.command.folders(), this.command.threshold(), this.command.print())
 
     for (const project1 of projects)
       for (const project2 of projects) {
@@ -70,6 +65,6 @@ export class Matcher {
       }
 
     comparisons.sort((c1: comparison, c2: comparison) => c2.s - c1.s)
-    this.output.results(comparisons)
+    return comparisons
   }
 }
